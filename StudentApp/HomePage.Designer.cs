@@ -42,6 +42,7 @@ namespace StudentApp
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.tmrCountDown = new System.Windows.Forms.Timer(this.components);
             this.lblMinute = new System.Windows.Forms.Label();
+            this.btnPassword = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,9 +87,9 @@ namespace StudentApp
             // lblUserName
             // 
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(81, 13);
+            this.lblUserName.Location = new System.Drawing.Point(95, 8);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(235, 30);
+            this.lblUserName.Size = new System.Drawing.Size(275, 30);
             this.lblUserName.TabIndex = 1;
             // 
             // btnColor
@@ -97,7 +98,7 @@ namespace StudentApp
             this.btnColor.FlatAppearance.BorderSize = 0;
             this.btnColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnColor.Location = new System.Drawing.Point(565, -6);
+            this.btnColor.Location = new System.Drawing.Point(565, -3);
             this.btnColor.Name = "btnColor";
             this.btnColor.Size = new System.Drawing.Size(110, 44);
             this.btnColor.TabIndex = 1;
@@ -155,11 +156,26 @@ namespace StudentApp
             this.lblMinute.TabIndex = 10;
             this.lblMinute.Text = "00:00:00";
             // 
+            // btnPassword
+            // 
+            this.btnPassword.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnPassword.FlatAppearance.BorderSize = 0;
+            this.btnPassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPassword.Location = new System.Drawing.Point(770, 197);
+            this.btnPassword.Name = "btnPassword";
+            this.btnPassword.Size = new System.Drawing.Size(14, 44);
+            this.btnPassword.TabIndex = 9;
+            this.btnPassword.UseVisualStyleBackColor = false;
+            this.btnPassword.Visible = false;
+            this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPassword);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.lblMinute);
             this.Controls.Add(this.panel6);
@@ -191,5 +207,6 @@ namespace StudentApp
         private System.Windows.Forms.ColorDialog colorDialog;
         private System.Windows.Forms.Timer tmrCountDown;
         private System.Windows.Forms.Label lblMinute;
+        private System.Windows.Forms.Button btnPassword;
     }
 }

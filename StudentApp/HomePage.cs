@@ -77,6 +77,7 @@ namespace StudentApp
             lstStudentView.Items.Add("Maths          : "+_student.Maths);
             lstStudentView.Items.Add("English        : "+_student.English);
             lstStudentView.Items.Add("Malayalam  : "+_student.Malayalam);
+            lstStudentView.Items.Add("Total            : " + (_student.English + _student.Malayalam + _student.Maths));
 
             connect.Close();
         }
@@ -112,6 +113,41 @@ namespace StudentApp
             command.ExecuteNonQuery();
             connect.Close();
         }
+
+
+
+
+
+
+
+        private void btnPassword_Click(object sender, EventArgs e)
+        {
+            //SqlConnection connect = new SqlConnection(Connection);
+            //connect.Open();
+            //SqlCommand cmd = new SqlCommand("StudentPageColorSet", connect);
+            //cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.AddWithValue("Id", studentId);
+           
+            //cmd.ExecuteNonQuery();
+            //connect.Close();
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         private void tmrCountDown_Tick(object sender, EventArgs e)
         {
           

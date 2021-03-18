@@ -113,8 +113,10 @@ namespace StudentApp
             this.txtPassword.Location = new System.Drawing.Point(506, 335);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.ReadOnly = true;
             this.txtPassword.Size = new System.Drawing.Size(228, 30);
             this.txtPassword.TabIndex = 7;
+            this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
             // label1
             // 
