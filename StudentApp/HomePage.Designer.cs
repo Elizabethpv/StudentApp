@@ -29,7 +29,8 @@ namespace StudentApp
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.components = new System.ComponentModel.Container();
+            this.lstStudentView = new System.Windows.Forms.ListBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -38,16 +39,22 @@ namespace StudentApp
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.tmrCountDown = new System.Windows.Forms.Timer(this.components);
+            this.lblMinute = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listBox1
+            // lstStudentView
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(94, 131);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(265, 238);
-            this.listBox1.TabIndex = 3;
+            this.lstStudentView.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstStudentView.FormattingEnabled = true;
+            this.lstStudentView.ItemHeight = 20;
+            this.lstStudentView.Location = new System.Drawing.Point(94, 131);
+            this.lstStudentView.Name = "lstStudentView";
+            this.lstStudentView.Size = new System.Drawing.Size(313, 184);
+            this.lstStudentView.TabIndex = 3;
+            this.lstStudentView.SelectedIndexChanged += new System.EventHandler(this.lstStudentView_SelectedIndexChanged);
             // 
             // panel4
             // 
@@ -78,9 +85,10 @@ namespace StudentApp
             // 
             // lblUserName
             // 
-            this.lblUserName.Location = new System.Drawing.Point(65, 8);
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(81, 13);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(157, 30);
+            this.lblUserName.Size = new System.Drawing.Size(235, 30);
             this.lblUserName.TabIndex = 1;
             // 
             // btnColor
@@ -88,6 +96,7 @@ namespace StudentApp
             this.btnColor.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnColor.FlatAppearance.BorderSize = 0;
             this.btnColor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnColor.Location = new System.Drawing.Point(565, -6);
             this.btnColor.Name = "btnColor";
             this.btnColor.Size = new System.Drawing.Size(110, 44);
@@ -101,18 +110,21 @@ namespace StudentApp
             this.btnLogOut.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnLogOut.FlatAppearance.BorderSize = 0;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.Location = new System.Drawing.Point(681, -3);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(110, 44);
             this.btnLogOut.TabIndex = 2;
             this.btnLogOut.Text = "Logout";
             this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(9, 13);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 30);
+            this.label1.Size = new System.Drawing.Size(83, 30);
             this.label1.TabIndex = 8;
             this.label1.Text = "Welcome  :";
             // 
@@ -123,10 +135,25 @@ namespace StudentApp
             this.panel3.Controls.Add(this.btnLogOut);
             this.panel3.Controls.Add(this.btnColor);
             this.panel3.Controls.Add(this.lblUserName);
-            this.panel3.Location = new System.Drawing.Point(10, 12);
+            this.panel3.Location = new System.Drawing.Point(10, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(780, 35);
+            this.panel3.Size = new System.Drawing.Size(780, 38);
             this.panel3.TabIndex = 4;
+            // 
+            // tmrCountDown
+            // 
+            this.tmrCountDown.Interval = 1000;
+            this.tmrCountDown.Tick += new System.EventHandler(this.tmrCountDown_Tick);
+            // 
+            // lblMinute
+            // 
+            this.lblMinute.BackColor = System.Drawing.Color.Transparent;
+            this.lblMinute.Font = new System.Drawing.Font("Brush Script MT", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinute.Location = new System.Drawing.Point(679, 53);
+            this.lblMinute.Name = "lblMinute";
+            this.lblMinute.Size = new System.Drawing.Size(105, 26);
+            this.lblMinute.TabIndex = 10;
+            this.lblMinute.Text = "00:00:00";
             // 
             // HomePage
             // 
@@ -134,21 +161,25 @@ namespace StudentApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.lblMinute);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstStudentView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "HomePage";
             this.Text = "HomePage";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HomePage_FormClosing);
             this.Load += new System.EventHandler(this.HomePage_Load);
+            this.MouseHover += new System.EventHandler(this.HomePage_MouseHover);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.HomePage_MouseMove);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lstStudentView;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
@@ -157,5 +188,8 @@ namespace StudentApp
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ColorDialog colorDialog;
+        private System.Windows.Forms.Timer tmrCountDown;
+        private System.Windows.Forms.Label lblMinute;
     }
 }

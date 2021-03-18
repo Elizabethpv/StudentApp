@@ -36,6 +36,7 @@ namespace StudentApp
         {
             Register register = new Register();
             register.Show();
+            
         }
 
         private Student LoginFunction(String UserName, String Password)
@@ -69,5 +70,17 @@ namespace StudentApp
             connect.Close();
         }
 
+        private void chkPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkPassword.Checked==true)
+            {
+
+                txtPassword.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+        }
     }
 }

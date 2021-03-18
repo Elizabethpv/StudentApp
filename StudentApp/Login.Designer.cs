@@ -39,6 +39,7 @@ namespace StudentApp
             this.label3 = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.chkPassword = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,15 +48,17 @@ namespace StudentApp
             this.txtUserName.Location = new System.Drawing.Point(414, 86);
             this.txtUserName.Multiline = true;
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(214, 30);
+            this.txtUserName.Size = new System.Drawing.Size(273, 30);
             this.txtUserName.TabIndex = 0;
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(414, 156);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(214, 29);
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(273, 29);
             this.txtPassword.TabIndex = 1;
             // 
             // pictureBox1
@@ -89,9 +92,9 @@ namespace StudentApp
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.Silver;
-            this.btnLogin.Location = new System.Drawing.Point(414, 218);
+            this.btnLogin.Location = new System.Drawing.Point(414, 235);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(214, 41);
+            this.btnLogin.Size = new System.Drawing.Size(273, 38);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -110,9 +113,9 @@ namespace StudentApp
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.Color.DarkGray;
-            this.btnRegister.Location = new System.Drawing.Point(414, 315);
+            this.btnRegister.Location = new System.Drawing.Point(414, 317);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(214, 39);
+            this.btnRegister.Size = new System.Drawing.Size(273, 39);
             this.btnRegister.TabIndex = 7;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -122,18 +125,30 @@ namespace StudentApp
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(406, 286);
+            this.label4.Location = new System.Drawing.Point(458, 298);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(236, 16);
+            this.label4.Size = new System.Drawing.Size(148, 16);
             this.label4.TabIndex = 8;
-            this.label4.Text = "-------------Dont have an Account ?---------";
+            this.label4.Text = "Dont have an Account ?";
+            // 
+            // chkPassword
+            // 
+            this.chkPassword.AutoSize = true;
+            this.chkPassword.Location = new System.Drawing.Point(588, 191);
+            this.chkPassword.Name = "chkPassword";
+            this.chkPassword.Size = new System.Drawing.Size(99, 17);
+            this.chkPassword.TabIndex = 9;
+            this.chkPassword.Text = "ShowPassword";
+            this.chkPassword.UseVisualStyleBackColor = false;
+            this.chkPassword.CheckedChanged += new System.EventHandler(this.chkPassword_CheckedChanged);
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(654, 378);
+            this.ClientSize = new System.Drawing.Size(699, 378);
+            this.Controls.Add(this.chkPassword);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.label3);
@@ -164,6 +179,7 @@ namespace StudentApp
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox chkPassword;
     }
 }
 

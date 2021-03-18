@@ -37,6 +37,13 @@ namespace StudentApp
             cmd.ExecuteNonQuery();         
             connect.Close();
             txtEmail.Text = txtEnglish.Text = txtMalayalam.Text = txtMaths.Text = txtName.Text = txtPassword.Text = txtUserName.Text = "";
+            Login login = new Login();
+            login.Show();
+        }
+
+        private void Register_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
