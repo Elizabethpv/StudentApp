@@ -17,7 +17,7 @@ namespace StudentApp
         {
             InitializeComponent();
         }
-        String Connection = "Data Source=DESKTOP-NDM7TFA\\SQLEXPRESS;Initial Catalog=SchoolManagementSystem;Integrated Security=True;";
+        String Connection = DatabaseConnection.Connection;
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             

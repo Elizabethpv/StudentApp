@@ -13,19 +13,19 @@ namespace StudentApp
 {
     public partial class HomePage : Form
     {
+        String Connection = DatabaseConnection.Connection;
         Student _student;
         public HomePage(Student student)
         {
             InitializeComponent();
             _student = student;
         }
-        String Connection = "Data Source=DESKTOP-NDM7TFA\\SQLEXPRESS;Initial Catalog=SchoolManagementSystem;Integrated Security=True;";
+
         static int hour, minute, second;
 
         static double TimeAllSecondes =100;
         private void btnColor_Click(object sender, EventArgs e)
         {
-
             SetColor(_student.Id);
         }
 
@@ -43,11 +43,7 @@ namespace StudentApp
             cmd.ExecuteNonQuery();
             connect.Close();
 
-
-
         }
-
-
 
         private void HomePage_Load(object sender, EventArgs e)
         {
@@ -59,8 +55,6 @@ namespace StudentApp
             tmrCountDown.Start();
             this.Left = _student.Left;
             this.Top = _student.Top;
-
-
         }
 
 
@@ -68,14 +62,12 @@ namespace StudentApp
 
         private void StudentList(int studentId)
         {
-
             
             SqlConnection connect = new SqlConnection(Connection);
             connect.Open();
             SqlCommand command = new SqlCommand("StudentList", connect);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("Id", studentId);
-
 
             SqlDataReader reader = command.ExecuteReader();
 
@@ -85,12 +77,8 @@ namespace StudentApp
             lstStudentView.Items.Add("Maths          : "+_student.Maths);
             lstStudentView.Items.Add("English        : "+_student.English);
             lstStudentView.Items.Add("Malayalam  : "+_student.Malayalam);
-           
 
             connect.Close();
-
-
-
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
@@ -123,9 +111,6 @@ namespace StudentApp
             command.Parameters.AddWithValue("Top", top);
             command.ExecuteNonQuery();
             connect.Close();
-
-
-
         }
         private void tmrCountDown_Tick(object sender, EventArgs e)
         {
