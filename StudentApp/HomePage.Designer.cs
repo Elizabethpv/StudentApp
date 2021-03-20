@@ -39,10 +39,12 @@ namespace StudentApp
             this.btnLogOut = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnChangePassword = new System.Windows.Forms.Button();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.tmrCountDown = new System.Windows.Forms.Timer(this.components);
             this.lblMinute = new System.Windows.Forms.Label();
             this.btnPassword = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +134,7 @@ namespace StudentApp
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel3.Controls.Add(this.btnChangePassword);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.btnLogOut);
             this.panel3.Controls.Add(this.btnColor);
@@ -140,6 +143,20 @@ namespace StudentApp
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(780, 38);
             this.panel3.TabIndex = 4;
+            // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnChangePassword.FlatAppearance.BorderSize = 0;
+            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangePassword.Location = new System.Drawing.Point(417, -3);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(142, 44);
+            this.btnChangePassword.TabIndex = 11;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.UseVisualStyleBackColor = false;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // tmrCountDown
             // 
@@ -170,11 +187,21 @@ namespace StudentApp
             this.btnPassword.Visible = false;
             this.btnPassword.Click += new System.EventHandler(this.btnPassword_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(573, 216);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "label2";
+            // 
             // HomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnPassword);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.lblMinute);
@@ -191,6 +218,7 @@ namespace StudentApp
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.HomePage_MouseMove);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -208,5 +236,7 @@ namespace StudentApp
         private System.Windows.Forms.Timer tmrCountDown;
         private System.Windows.Forms.Label lblMinute;
         private System.Windows.Forms.Button btnPassword;
+        private System.Windows.Forms.Button btnChangePassword;
+        private System.Windows.Forms.Label label2;
     }
 }

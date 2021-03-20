@@ -21,6 +21,9 @@ namespace StudentApp
             _student = student;
         }
 
+        
+
+
         static int hour, minute, second;
 
         static double TimeAllSecondes =100;
@@ -115,11 +118,6 @@ namespace StudentApp
         }
 
 
-
-
-
-
-
         private void btnPassword_Click(object sender, EventArgs e)
         {
             //SqlConnection connect = new SqlConnection(Connection);
@@ -133,20 +131,20 @@ namespace StudentApp
 
         }
 
+        
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            ChangePassword obj = new ChangePassword();
+            obj.Show();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+        }
+       
+        public void CallChangePasswordForm(int studentId)
+        {
+            
+          
+        }
 
         private void tmrCountDown_Tick(object sender, EventArgs e)
         {
@@ -166,12 +164,13 @@ namespace StudentApp
             {
                 this.Close();
             }
-            lblMinute.Visible = false;
+            
         }
 
         private void HomePage_MouseMove(object sender, MouseEventArgs e)
         {
-           
+            
         }
+       
     }
 }

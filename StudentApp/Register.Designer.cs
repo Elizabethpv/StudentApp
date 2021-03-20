@@ -110,12 +110,13 @@ namespace StudentApp
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(506, 335);
+            this.txtPassword.Location = new System.Drawing.Point(344, 493);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.ReadOnly = true;
             this.txtPassword.Size = new System.Drawing.Size(228, 30);
             this.txtPassword.TabIndex = 7;
+            this.txtPassword.Visible = false;
             this.txtPassword.Click += new System.EventHandler(this.txtPassword_Click);
             // 
             // label1
@@ -175,7 +176,7 @@ namespace StudentApp
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(428, 335);
+            this.label7.Location = new System.Drawing.Point(260, 508);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 14;
@@ -183,7 +184,7 @@ namespace StudentApp
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(506, 390);
+            this.btnSubmit.Location = new System.Drawing.Point(506, 341);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(228, 37);
             this.btnSubmit.TabIndex = 15;
@@ -196,7 +197,7 @@ namespace StudentApp
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(754, 439);
+            this.ClientSize = new System.Drawing.Size(754, 390);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);

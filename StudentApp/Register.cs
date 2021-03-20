@@ -25,6 +25,7 @@ namespace StudentApp
             connect.Open();
             SqlCommand cmd = new SqlCommand("StudentRegister", connect);
             cmd.CommandType = CommandType.StoredProcedure;
+
             cmd.Parameters.AddWithValue("Name",txtName.Text);
             cmd.Parameters.AddWithValue("Email",txtEmail.Text);
             cmd.Parameters.AddWithValue("Maths",txtMaths.Text);
@@ -36,17 +37,14 @@ namespace StudentApp
             cmd.Parameters.AddWithValue("Top", this.Top);
             cmd.ExecuteNonQuery();         
             connect.Close();
+            MessageBox.Show(txtPassword.Text, "Your Password is :");
             txtEmail.Text = txtEnglish.Text = txtMalayalam.Text = txtMaths.Text = txtName.Text = txtPassword.Text = txtUserName.Text = "";
+            
             Login login = new Login();
             login.Show();
         }
 
         private void Register_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txtPassword_Click(object sender, EventArgs e)
         {
             int r, k;
             int passwordLength = 6;
@@ -83,6 +81,14 @@ namespace StudentApp
             }
 
             txtPassword.Text = password;
+
+
+           
+        }
+
+        private void txtPassword_Click(object sender, EventArgs e)
+        {
+            
         }
     }
     
