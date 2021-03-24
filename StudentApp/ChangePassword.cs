@@ -15,9 +15,12 @@ namespace StudentApp
     {
         String Connection = DatabaseConnection.Connection;
 
-        public ChangePassword()
+
+        Student _student;
+        public ChangePassword(Student student)
         {
-            InitializeComponent();       
+            InitializeComponent();
+            _student = student;
         }
         
         private void btnPasswordChange_Click(object sender, EventArgs e)
@@ -30,9 +33,11 @@ namespace StudentApp
 
             if (txtNewPassword.Text == txtConfirmPassword.Text)
             {
-                MessageBox.Show("Password is Changed", "Confirmation");
-               // command.Parameters.AddWithValue("Id",_student.Id);
+
+                command.Parameters.AddWithValue("Id", _student.Id);
                 command.Parameters.AddWithValue("Password", txtConfirmPassword.Text);
+                MessageBox.Show("Password is changed", "Confirmation");
+                txtConfirmPassword.Text = txtNewPassword.Text = "";
             }
             else
             {

@@ -15,14 +15,16 @@ namespace StudentApp
     {
         String Connection = DatabaseConnection.Connection;
         Student _student;
+
+        int timeSec, timeMin, timeCs;
+        bool isactive;
+
+
         public HomePage(Student student)
         {
             InitializeComponent();
             _student = student;
         }
-
-        
-
 
         static int hour, minute, second;
 
@@ -55,7 +57,11 @@ namespace StudentApp
 
             StudentList(_student.Id);
 
+            
             tmrCountDown.Start();
+           
+
+
             this.Left = _student.Left;
             this.Top = _student.Top;
         }
@@ -92,7 +98,7 @@ namespace StudentApp
 
         private void HomePage_MouseHover(object sender, EventArgs e)
         {
-            tmrCountDown.Start();
+            
         }
 
         private void lstStudentView_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,7 +140,7 @@ namespace StudentApp
         
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            ChangePassword obj = new ChangePassword();
+            ChangePassword obj = new ChangePassword(_student);
             obj.Show();
 
 
@@ -148,7 +154,7 @@ namespace StudentApp
 
         private void tmrCountDown_Tick(object sender, EventArgs e)
         {
-          
+
             if (TimeAllSecondes > 0)
             {
                 TimeAllSecondes = TimeAllSecondes - 1;
@@ -159,18 +165,26 @@ namespace StudentApp
             minute = time_Span.Minutes;
             second = time_Span.Seconds;
 
-            lblMinute.Text= "  " + hour + ":" + minute + ":" + second;
-            if(second==0)
+            lblMinute.Text = "  " + hour + ":" + minute + ":" + second;
+            if (second == 0)
             {
                 this.Close();
             }
-            
+
         }
+       
 
         private void HomePage_MouseMove(object sender, MouseEventArgs e)
         {
+            tmrCountDown.Enabled = false;
+            ResetTime();
+            tmrCountDown.Start();
             
         }
-       
+
+        private void ResetTime()
+        {
+            double TimeAllSecondes = 100;
+        }
     }
 }
